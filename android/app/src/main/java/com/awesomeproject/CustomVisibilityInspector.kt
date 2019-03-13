@@ -5,10 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.facebook.react.ReactPackage
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContextBaseJavaModule
-import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.*
 import com.facebook.react.uimanager.ReactShadowNode
 import com.facebook.react.uimanager.ViewManager
 import com.facebook.react.uimanager.util.ReactFindViewUtil
@@ -29,7 +26,8 @@ class CustomVisibilityInspectorModule(context: ReactApplicationContext) : ReactC
 
     override fun getName() = "CustomVisibilityInspector"
 
-    @ReactMethod fun inspect(promise: Promise) {
+    @ReactMethod
+    fun inspect(promise: Promise) {
         var description = "Not found"
 
         this.view?.let {
@@ -61,6 +59,9 @@ class CustomVisibilityInspectorModule(context: ReactApplicationContext) : ReactC
 }
 
 class CustomVisibilityInspectorPackage : ReactPackage {
-    override fun createNativeModules(reactContext: ReactApplicationContext) = listOf(CustomVisibilityInspectorModule(reactContext))
-    override fun createViewManagers(reactContext: ReactApplicationContext) = emptyList<ViewManager<View, ReactShadowNode<*>>>()
+    override fun createNativeModules(reactContext: ReactApplicationContext)
+            = listOf(CustomVisibilityInspectorModule(reactContext))
+
+    override fun createViewManagers(reactContext: ReactApplicationContext)
+            = emptyList<ViewManager<View, ReactShadowNode<*>>>()
 }
