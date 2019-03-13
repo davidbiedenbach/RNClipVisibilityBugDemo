@@ -35,12 +35,15 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <View style={{backgroundColor: 'lightgray', height: "75%"}} nativeID="visibilityInspect">
+          <ScrollView>
+            <Text style={styles.itemText}>This list is scrollable</Text>
             {
               Array.from(
                 {length: ITEMS_COUNT},
                 (value, index) => <Text key={`item-${index}`} style={styles.itemText}>[Item #{index}]</Text>
               )
             }
+          </ScrollView>
         </View>
 
         <View style={{backgroundColor: 'lightskyblue', flex: 1, paddingHorizontal: 8}}>
