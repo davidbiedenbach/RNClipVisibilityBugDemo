@@ -1,4 +1,4 @@
-package com.awesomeproject
+package com.getglobalvisiblerecttest
 
 import android.graphics.Rect
 import android.view.View

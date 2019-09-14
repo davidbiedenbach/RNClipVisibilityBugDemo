@@ -34,7 +34,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{backgroundColor: 'lightgray', height: "75%"}} nativeID="visibilityInspect">
+        <View style={{backgroundColor: 'lightgray', height: "75%", overflow: 'hidden'}} nativeID="visibilityInspect">
           <ScrollView>
             <Text style={styles.itemText}>This list is scrollable</Text>
             {
