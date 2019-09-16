@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "github:facebook/react-native#master"
+    "react-native": "github:davidbiedenbach/react-native#issue_23870_fix"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
