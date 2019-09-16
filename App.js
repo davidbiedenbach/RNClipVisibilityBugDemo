@@ -36,6 +36,10 @@ export default class App extends Component<Props> {
 
   render() {
     const { mode } = this.state;
+    const b1Color = mode === Modes.View ? "#CFCFCF" : "#0080FF";
+    const b2Color = mode === Modes.ScrollView ? "#CFCFCF" : "#0080FF";
+    const b3Color = mode === Modes.FlatList ? "#CFCFCF" : "#0080FF";
+    const b4Color = mode === Modes.HorizontalScrollView ? "#CFCFCF" : "#0080FF";
     return (
       <View style={styles.container}>
         <View style={{backgroundColor: 'lightgray', height: "75%", width: "75%", overflow: 'hidden'}} nativeID="visibilityInspect">
@@ -102,6 +106,7 @@ export default class App extends Component<Props> {
         </View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
+            color={b1Color}
             type="primary"
             title="View"
             onPress={() => {
@@ -109,6 +114,7 @@ export default class App extends Component<Props> {
             }}
           />
           <Button
+            color={b2Color}
             type="primary"
             title="ScrollView"
             onPress={() => {
@@ -116,6 +122,7 @@ export default class App extends Component<Props> {
             }}
           />
           <Button
+            color={b3Color}
             type="primary"
             title="FlatList"
             onPress={() => {
@@ -123,6 +130,7 @@ export default class App extends Component<Props> {
             }}
           />
           <Button
+            color={b4Color}
             type="primary"
             title="HorizontalScrollView"
             onPress={() => {
